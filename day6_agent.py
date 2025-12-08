@@ -2,7 +2,6 @@ from anthropic import Anthropic
 from dotenv import load_dotenv
 import os
 
-# Загрузка API ключа
 load_dotenv()
 api_key = os.getenv("ANTHROPIC_API_KEY")
 
@@ -16,21 +15,18 @@ print("=" * 80)
 print("ТЕСТЕР TEMPERATURE")
 print("=" * 80)
 
-# Пользователь вводит свой промпт
 user_prompt = input("\nВведите ваш промпт:\n> ")
 
 if not user_prompt.strip():
     print("Ошибка: Промпт не может быть пустым!")
     exit(1)
 
-# Стандартные значения temperature
 temperatures = [0, 0.5, 1.0]
 
 print("\n" + "=" * 80)
 print(f"Temperature: {temperatures}")
 print("=" * 80)
 
-# Основное тестирование
 for temp in temperatures:
     print(f"\nTEMPERATURE = {temp}")
     print("-" * 80)
@@ -55,4 +51,5 @@ for temp in temperatures:
 
 print("\n" + "=" * 80)
 print("Готово!")
+
 print("=" * 80)
