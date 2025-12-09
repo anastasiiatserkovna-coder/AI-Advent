@@ -51,14 +51,12 @@ def test_openrouter(prompt, model_id, model_name):
     tokens = result.get('usage', {}).get('total_tokens', int(len(text.split()) * 1.3))
     return {"model": model_name, "time": elapsed, "tokens": tokens, "response": text}
 
-# ===== ЗАПУСК =====
 results = [
     test_claude(user_prompt),
     test_openrouter(user_prompt, "openai/gpt-oss-20b:free", "GPT-OSS 20B (OpenAI)"),
     test_openrouter(user_prompt, "mistralai/mistral-7b-instruct:free", "Mistral 7B (Mistral AI)")
 ]
 
-# ===== РЕЗУЛЬТАТЫ =====
 print("\n" + "=" * 80)
 print("РЕЗУЛЬТАТЫ")
 print("=" * 80)
@@ -73,7 +71,6 @@ for i, r in enumerate(results, 1):
     print(r['response'])
     print("-" * 80)
 
-# ===== ТАБЛИЦА =====
 print("\n" + "=" * 80)
 print("ТАБЛИЦА")
 print("=" * 80)
@@ -81,5 +78,6 @@ print(f"{'Модель':<35} {'Время (сек)':<15} {'Токены':<10}")
 print("-" * 80)
 for r in results:
     print(f"{r['model']:<33} {r['time']:<15.2f} {r['tokens']:<10}")
+
 
 print("\n" + "=" * 80)
