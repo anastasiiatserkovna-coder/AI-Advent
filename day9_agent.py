@@ -11,7 +11,6 @@ total_tokens = 0
 def compress_history():
     global history
     
-    # СТАТИСТИКА ДО
     messages_before = len(history)
     tokens_before = sum(len(m['content']) for m in history) // 4
     
@@ -21,7 +20,6 @@ def compress_history():
     print(f"   ~Токенов в истории: {tokens_before}")
     print("="*60)
     
-    # СЖАТИЕ
     old_messages = history[:10]
     dialog = "\n".join([f"{m['role']}: {m['content']}" for m in old_messages])
     
@@ -34,7 +32,6 @@ def compress_history():
     summary = response.content[0].text
     history = [{"role": "assistant", "content": f"[SUMMARY]: {summary}"}] + history[10:]
     
-    # СТАТИСТИКА ПОСЛЕ
     messages_after = len(history)
     tokens_after = sum(len(m['content']) for m in history) // 4
     
@@ -75,7 +72,6 @@ def send_message(user_text):
     
     return ai_reply
 
-# ОСНОВНОЙ ЦИКЛ
 print("="*60)
 print("ЧАТ СО СЖАТИЕМ ДИАЛОГА")
 print("   Сжатие каждые 10 сообщений")
@@ -107,5 +103,6 @@ while True:
     print(f"AI: {reply}")
     
     check_and_compress()
+
 
 print("\nГотово!")
