@@ -1,0 +1,53 @@
+{
+  "city": "Warsaw",
+  "history": [
+    {
+      "timestamp": "2025-12-17 19:10:49",
+      "temperature": 2.2,
+      "windspeed": 13.3,
+      "description": "ясно"
+    },
+    {
+      "timestamp": "2025-12-17 19:13:47",
+      "temperature": 2.2,
+      "windspeed": 13.3,
+      "description": "ясно"
+    },
+    {
+      "timestamp": "2025-12-17 19:15:19",
+      "temperature": 2.2,
+      "windspeed": 13.0,
+      "description": "ясно"
+    },
+    {
+      "timestamp": "2025-12-17 19:17:41",
+      "temperature": 2.2,
+      "windspeed": 13.0,
+      "description": "ясно"
+    },
+    {
+      "timestamp": "2025-12-17 19:22:52",
+      "temperature": 2.2,
+      "windspeed": 13.0,
+      "description": "ясно"
+    },
+    {
+      "timestamp": "2025-12-17 19:30:52",
+      "temperature": 2.0,
+      "windspeed": 12.2,
+      "description": "ясно"
+    },
+    {
+      "timestamp": "2025-12-17 19:33:04",
+      "temperature": 2.0,
+      "windspeed": 12.2,
+      "description": "ясно"
+    },
+    {
+      "timestamp": "2025-12-17 19:41:27",
+      "temperature": 2.0,
+      "windspeed": 12.2,
+      "description": "ясно"
+    }
+  ]
+}
