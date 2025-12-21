@@ -1,8 +1,3 @@
-"""
-MCP Server: Windows Programs Manager
-Управление программами Windows
-"""
-
 import json
 import subprocess
 import asyncio
