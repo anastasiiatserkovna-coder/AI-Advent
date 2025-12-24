@@ -15,7 +15,7 @@ if not api_key:
 # Простой RAG с фильтрацией
 class SimpleRAG:
     def __init__(self):
-        print("🚀 Инициализация RAG системы...")
+        print("Инициализация RAG системы...")
         
         self.client = Anthropic(api_key=api_key)
         
@@ -40,10 +40,10 @@ class SimpleRAG:
         ]
         
         # Создаем эмбеддинги для всех документов
-        print("📝 Создание эмбеддингов для документов...")
+        print("Создание эмбеддингов для документов...")
         self.document_embeddings = self.embedding_model.encode(self.documents)
         
-        print(f"✅ Система готова! Загружено {len(self.documents)} документов")
+        print(f"Система готова! Загружено {len(self.documents)} документов")
         print("-" * 50)
     
     def calculate_similarity(self, query, document_embeddings):
@@ -83,7 +83,7 @@ class SimpleRAG:
     
     def search_with_filter(self, query, threshold=0.5, top_k=10):
         """Поиск с фильтрацией по порогу"""
-        print(f"\n🔍 ПОИСК С ФИЛЬТРАЦИЕЙ (порог: {threshold})")
+        print(f"\nПОИСК С ФИЛЬТРАЦИЕЙ (порог: {threshold})")
         print(f"Запрос: '{query}'")
         
         similarities = self.calculate_similarity(query, self.document_embeddings)
@@ -147,7 +147,7 @@ class SimpleRAG:
     def compare_approaches(self, query):
         """Сравнение подходов с фильтрацией и без"""
         print("\n" + "="*60)
-        print("🔄 СРАВНЕНИЕ ПОДХОДОВ")
+        print("СРАВНЕНИЕ ПОДХОДОВ")
         print("="*60)
         
         # 1. Без фильтрации
@@ -157,7 +157,7 @@ class SimpleRAG:
         if results_no_filter:
             context_no_filter = "\n".join([doc for doc, _ in results_no_filter[:3]])
             answer_no_filter = self.ask_claude(query, context_no_filter)
-            print(f"\n📝 ОТВЕТ БЕЗ ФИЛЬТРАЦИИ:")
+            print(f"\nОТВЕТ БЕЗ ФИЛЬТРАЦИИ:")
             print(answer_no_filter)
         
         # 2. С фильтрацией
@@ -279,4 +279,5 @@ def main():
             print("❌ Неверный выбор")
 
 if __name__ == "__main__":
+
     main()
